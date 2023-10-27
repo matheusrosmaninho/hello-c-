@@ -11,6 +11,7 @@
                 Price = 10
             };
             Console.WriteLine(product.PriceInDolar(5));
+            Console.WriteLine(EEstadoCivil.Casado);
         }
 
     }
