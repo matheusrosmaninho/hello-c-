@@ -4,10 +4,12 @@
     {
         static void Main(string[] args)
         {
-            var product = new Product();
-            product.Id = 1;
-            product.Name = "teste";
-            product.Price = 10;
+            Product product = new Product
+            {
+                Id = 1,
+                Name = "teste",
+                Price = 10
+            };
             Console.WriteLine(product.PriceInDolar(5));
         }
 
