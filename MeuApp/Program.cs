@@ -1,39 +1,20 @@
-﻿namespace MeuApp
+﻿namespace MeuApp;
+
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        Product product = new Product
         {
-            Product product = new Product
-            {
-                Id = 1,
-                Name = "teste",
-                Price = 10
-            };
-            Console.WriteLine(product.PriceInDolar(5));
-            Console.WriteLine(EEstadoCivil.Casado);
-        }
+            Id = 1,
+            Name = "teste",
+            Price = 10
+        };
+        Console.WriteLine(product.PriceInDolar(5));
 
+        var cliente = new Cliente(1, EEstadoCivil.Casado);
+        Console.WriteLine((int)cliente.EstadoCivil);
+        Console.WriteLine(cliente.EstadoCivil);
     }
 
-    struct Product
-    {
-        public int Id;
-
-        public string Name;
-
-        public float Price;
-
-        public Product(int id, string name, float price)
-        {
-            Id = id;
-            Name = name;
-            Price = price;
-        }
-
-        public float PriceInDolar(float dolar)
-        {
-            return Price * dolar;
-        }
-    }
 }
