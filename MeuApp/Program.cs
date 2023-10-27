@@ -6,7 +6,7 @@
         {
             var product = new Product();
             product.Id = 1;
-            product.Title = "teste";
+            product.Name = "teste";
             product.Price = 10;
             Console.WriteLine(product.PriceInDolar(5));
         }
@@ -16,14 +16,15 @@
     struct Product
     {
         public int Id;
+
+        public string Name;
+
         public float Price;
 
-        public string Title;
-
-        public Product(int id, string title, float price)
+        public Product(int id, string name, float price)
         {
             Id = id;
-            Title = title;
+            Name = name;
             Price = price;
         }
 
