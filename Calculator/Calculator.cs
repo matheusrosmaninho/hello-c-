@@ -22,6 +22,8 @@ struct Calculator
                 return valor1 + valor2;
             case EOperador.SUBTRACAO:
                 return valor1 - valor2;
+            case EOperador.MULTIPLICACAO:
+                return valor1 * valor2;
             default:
                 return 0F;
         }

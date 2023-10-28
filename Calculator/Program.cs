@@ -10,6 +10,8 @@ class Program
         Console.WriteLine("Digite o operador:");
         Console.WriteLine(" 1 - soma");
         Console.WriteLine(" 2 - subtração");
+        Console.WriteLine(" 3 - multiplicação");
+
         int operador = int.Parse(Console.ReadLine());
 
         Console.WriteLine("Digite o segundo valor");
