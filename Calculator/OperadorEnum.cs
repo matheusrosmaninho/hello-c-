@@ -4,5 +4,6 @@ enum EOperador
 {
     SOMA = 1,
     SUBTRACAO = 2,
-    MULTIPLICACAO = 3
+    MULTIPLICACAO = 3,
+    DIVISAO = 4
 }
