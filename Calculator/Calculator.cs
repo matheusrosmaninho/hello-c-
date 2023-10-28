@@ -20,6 +20,8 @@ struct Calculator
         switch(Operador) {
             case EOperador.SOMA:
                 return valor1 + valor2;
+            case EOperador.SUBTRACAO:
+                return valor1 - valor2;
             default:
                 return 0F;
         }
