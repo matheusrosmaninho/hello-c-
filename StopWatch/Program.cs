@@ -19,10 +19,15 @@ class Program
         string data = Console.ReadLine().ToLower();
         char type = char.Parse(data.Substring(data.Length - 1, 1));
         int time = int.Parse(data.Substring(0, data.Length - 1));
+        int multipliar = 1;
 
-        Console.WriteLine(data);
-        Console.WriteLine(time);
-        Console.WriteLine(type);
+        if (type == 'm')
+            multipliar = 60;
+
+        if (time == 0)
+            Environment.Exit(0);
+
+        Start(time * multipliar);
     }
 
     public static void Start(int time)
@@ -40,5 +45,6 @@ class Program
         Console.Clear();
         Console.WriteLine("Stop watch finalizado ...");
         Thread.Sleep(2500);
+        Menu();
     }
 }
