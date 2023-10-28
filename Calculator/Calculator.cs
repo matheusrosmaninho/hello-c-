@@ -25,9 +25,17 @@ struct Calculator
             case EOperador.MULTIPLICACAO:
                 return valor1 * valor2;
             case EOperador.DIVISAO:
-                return valor1 / valor2;
+                return Divisao(valor1, valor2);
             default:
                 return 0F;
         }
+    }
+
+    private float Divisao(float numero1, float numero2)
+    {
+        if (numero2 == 0) {
+            return 0;
+        }
+        return numero1 / numero2;
     }
 }

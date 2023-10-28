@@ -1,4 +1,4 @@
-﻿namespace Calculator;
+namespace Calculator;
 
 class Program
 {
@@ -6,18 +6,20 @@ class Program
     {
         int opcao = Menu();
 
+        if (opcao == 5) {
+            Environment.Exit(3);
+        }
+
         Console.WriteLine("Digite o primeiro valor:");
         float v1 = float.Parse(Console.ReadLine());
 
         Console.WriteLine("Digite o segundo valor");
         float v2 = float.Parse(Console.ReadLine());
 
-        // Calculator calculator = new Calculator(v1, operador, v2);
+        Calculator calculator = new Calculator(v1, opcao, v2);
+        float resultado = calculator.Resultado();
 
-        // float resultado = calculator.Resultado();
-
-        // Console.WriteLine("O resultado é " + resultado);
-        // Console.WriteLine($"O resultado é: {resultado}");
+        Console.WriteLine($"O resultado da {(EOperador)opcao} é: {resultado}");
     }
 
     private static int Menu()
