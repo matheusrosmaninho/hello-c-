@@ -7,10 +7,17 @@ class Program
         Console.WriteLine("Digite o primeiro valor:");
         float v1 = float.Parse(Console.ReadLine());
 
+        Console.WriteLine("Digite o operador:");
+        Console.WriteLine(" 1 - soma");
+        int operador = int.Parse(Console.ReadLine());
+
         Console.WriteLine("Digite o segundo valor");
         float v2 = float.Parse(Console.ReadLine());
 
-        float resultado = v1 + v2;
+        Calculator calculator = new Calculator(v1, operador, v2);
+
+        float resultado = calculator.Resultado();
+
         Console.WriteLine("O resultado é " + resultado);
         Console.WriteLine($"O resultado é: {resultado}");
     }
