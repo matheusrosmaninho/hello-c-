@@ -1,5 +1,7 @@
 ﻿namespace TextEditor;
 
+using System.IO;
+
 class Program
 {
     public static void Main(string[] args)
@@ -34,7 +36,20 @@ class Program
         }
     }
 
-    public static void Abrir() { }
+    public static void Abrir() {
+        Console.Clear();
+        Console.WriteLine("Qual caminho do arquivo?");
+        string path = Console.ReadLine();
+
+        using(var file = new StreamReader(path)) {
+            string text = file.ReadToEnd();
+            Console.WriteLine(text);
+        }
+
+        Console.WriteLine("Aperte qualquer tecla para voltar ao menu ...");
+        Console.ReadLine();
+        Menu();
+     }
 
     public static void Editar()
     {
@@ -50,6 +65,21 @@ class Program
         }
         while (Console.ReadKey().Key != ConsoleKey.Escape);
 
-        Console.Write(text);
+        Salvar(text);
+    }
+
+    public static void Salvar(string text)
+    {
+        Console.Clear();
+        Console.WriteLine("Qual caminho para salvar o arquivo?");
+        string path = Console.ReadLine();
+
+        using(var file = new StreamWriter(path)) {
+            file.Write(text);
+        }
+
+        Console.WriteLine($"Arquivo {path} salvo com sucesso, pressione qualquer tecla para voltar para o menu");
+        Console.ReadLine();
+        Menu();
     }
 }
